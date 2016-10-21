@@ -1,7 +1,15 @@
-﻿@{
-    ViewBag.Title = "About";
+﻿@model WebApplication.Models.FancyButtonGroupViewModel
+@{
+    ViewBag.Title = "More Fancy Buttons";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h3>@Model.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+<div class="btn-group-vertical" role="group" aria-label="...">
+    @foreach (var btn in Model.Buttons)
+    {
+        <button type="button" class="btn @btn.Style">@btn.Name</button>
+    }
+</div>
+
+
